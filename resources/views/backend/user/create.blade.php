@@ -1,5 +1,10 @@
 @extends('backend.layouts.master')
+
+
+
 @section('css')
+    <!-- INTERNAL Toster css -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet"/>
 
 @endsection
 
@@ -238,7 +243,8 @@
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="exampleSelectPtime">Preferred Time</label>
-                                                <input type="time" name="preferred_time" value="{{ old('preferred_time') }}"
+                                                <input type="time" name="preferred_time"
+                                                       value="{{ old('preferred_time') }}"
                                                        id="exampleSelectPtime"
                                                        class="form-control @error('preferred_time') is-invalid @enderror">
                                             </div>
@@ -246,17 +252,21 @@
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="exampleSelectpcourt">Preferred Court</label>
-                                                <input type="text" name="preferred_court" value="{{ old('preferred_court') }}"
+                                                <input type="text" name="preferred_court"
+                                                       value="{{ old('preferred_court') }}"
                                                        id="exampleSelectpcourt"
-                                                       class="form-control @error('preferred_court') is-invalid @enderror" placeholder="Preferred Court">
+                                                       class="form-control @error('preferred_court') is-invalid @enderror"
+                                                       placeholder="Preferred Court">
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="exampleSelectpcoach">Preferred Coach</label>
-                                                <input type="text" name="preferred_coach" value="{{ old('preferred_coach') }}"
+                                                <input type="text" name="preferred_coach"
+                                                       value="{{ old('preferred_coach') }}"
                                                        id="exampleSelectpcoach"
-                                                       class="form-control @error('preferred_coach') is-invalid @enderror" placeholder="Preferred Coach">
+                                                       class="form-control @error('preferred_coach') is-invalid @enderror"
+                                                       placeholder="Preferred Coach">
                                             </div>
                                         </div>
                                     </div>
@@ -282,6 +292,9 @@
     <script src="{{ asset('assets/js/form-components.js')}}"></script>
     <script src="{{ asset('assets/js/form-picker.js')}}"></script>
 
+    <!-- INTERNAL Toster js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
     <script>
         $(document).ready(function () {
             $("#create_member").click(function () {
@@ -295,6 +308,8 @@
                     $("#create_member").val("No");
                 }
             });
+
+
 
         });
     </script>
