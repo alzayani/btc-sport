@@ -39,8 +39,6 @@
                         <div class="card-body">
                             <form action="{{route('user.store')}}" method="POST">
                                 @csrf
-                                <input type="text" name="phone" class="form-control " placeholder="Phone number">
-
                                 <div class="row">
                                     <div class="col-sm-2">
                                         <div class="form-group">
@@ -133,11 +131,11 @@
                                                 <option @if(old('gender') == "")        selected @endif   value=""
                                                         disabled>Choose Gender
                                                 </option>
-                                                <option @if(old('gender') == "Male")    selected @endif   value="Male">
+                                                <option @if(old('gender') == "1")    selected @endif   value="1">
                                                     Male
                                                 </option>
-                                                <option @if(old('gender') == "Female")  selected
-                                                        @endif   value="Female">Female
+                                                <option @if(old('gender') == "0")  selected
+                                                        @endif   value="0">Female
                                                 </option>
                                             </select>
 
@@ -153,11 +151,11 @@
                                                 <option @if(old('status') == "")        selected @endif   value=""
                                                         disabled>Choose Status
                                                 </option>
-                                                <option @if(old('status') == "Active")    selected
-                                                        @endif   value="Male">Active
+                                                <option @if(old('status') == "1")    selected
+                                                        @endif   value="1">Active
                                                 </option>
-                                                <option @if(old('status') == "Inactive")  selected
-                                                        @endif   value="Female">Inactive
+                                                <option @if(old('status') == "0")  selected
+                                                        @endif   value="0">Inactive
                                                 </option>
                                             </select>
                                         </div>
@@ -181,7 +179,7 @@
 
                                 <div class="form-check mx-sm-2">
                                     <label class="custom-control custom-checkbox">
-                                        <input type="checkbox" id="create_member" value="No" name="member"
+                                        <input type="checkbox" id="create_member" value="No" name="is_member"
                                                class="custom-control-input">
                                         <span class="custom-control-label">&nbsp; Add As Member</span>
                                     </label>
@@ -233,6 +231,32 @@
                                                 <input type="date" name="expiry_date" value="{{ old('expiry_date') }}"
                                                        id="exampleSelectExpiry"
                                                        class="form-control @error('expiry_date') is-invalid @enderror">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="exampleSelectPtime">Preferred Time</label>
+                                                <input type="time" name="preferred_time" value="{{ old('preferred_time') }}"
+                                                       id="exampleSelectPtime"
+                                                       class="form-control @error('preferred_time') is-invalid @enderror">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="exampleSelectpcourt">Preferred Court</label>
+                                                <input type="text" name="preferred_court" value="{{ old('preferred_court') }}"
+                                                       id="exampleSelectpcourt"
+                                                       class="form-control @error('preferred_court') is-invalid @enderror" placeholder="Preferred Court">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="exampleSelectpcoach">Preferred Coach</label>
+                                                <input type="text" name="preferred_coach" value="{{ old('preferred_coach') }}"
+                                                       id="exampleSelectpcoach"
+                                                       class="form-control @error('preferred_coach') is-invalid @enderror" placeholder="Preferred Coach">
                                             </div>
                                         </div>
                                     </div>
