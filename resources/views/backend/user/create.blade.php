@@ -3,8 +3,9 @@
 
 
 @section('css')
-    <!-- INTERNAL Toster css -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet"/>
+
+
+{{--    <link rel="stylesheet" href="{{ asset('assets/plugins/jquery-toast-plugin/dist/jquery.toast.min.css')}}">--}}
 
 @endsection
 
@@ -42,7 +43,7 @@
                     <div class="card">
                         <div class="card-header"><h3>Create New User</h3></div>
                         <div class="card-body">
-                            <form action="{{route('user.store')}}" method="POST">
+                            <form action="{{route('user.store')}}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="row">
                                     <div class="col-sm-2">
@@ -168,9 +169,9 @@
                                     <div class="col-md-10">
                                         <div class="form-group">
                                             <label>File upload</label>
-                                            <input type="file" name="img[]" class="file-upload-default">
+                                            <input type="file" name="image" class="file-upload-default">
                                             <div class="input-group col-xs-12">
-                                                <input type="text" name="image" id="image"
+                                                <input type="text" name="images" id="images"
                                                        class="form-control file-upload-info" disabled
                                                        placeholder="Upload Image">
                                                 <span class="input-group-append">
@@ -288,12 +289,9 @@
 
 
 @section('js')
-    {{--<script src="{{ asset('assets/js/datatables.js')}}"></script>--}}
     <script src="{{ asset('assets/js/form-components.js')}}"></script>
     <script src="{{ asset('assets/js/form-picker.js')}}"></script>
 
-    <!-- INTERNAL Toster js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 
     <script>
         $(document).ready(function () {

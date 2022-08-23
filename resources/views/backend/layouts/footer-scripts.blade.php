@@ -17,8 +17,30 @@
 <script src="{{ asset('assets/js/tables.js')}}"></script>
 <script src="{{ asset('assets/js/widgets.js')}}"></script>
 <script src="{{ asset('assets/js/charts.js')}}"></script>
+{{--<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>--}}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"
+        integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 @yield('js')
 <script src="{{ asset('assets/dist/js/theme.min.js')}}"></script>
+
+
+<!-- Display jQuery Toast Globally -->
+<script>
+    @if(Session::has('flash_message_success'))
+    toastr.success('{{ Session::get('flash_message_success') }}', "Successfully !!")
+
+
+    @elseif (Session::has('flash_message_warning'))
+    toastr.warning('{{ Session::get('flash_message_warning') }}', "Warning !!")
+
+
+    @elseif (Session::has('flash_message_error'))
+    toastr.warning('{{ Session::get('flash_message_error') }}', "Error !!")
+
+    @endif
+</script>
 
 
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

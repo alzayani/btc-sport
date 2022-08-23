@@ -30,19 +30,14 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::prefix('admin')->group(function () {
     Route::get('/login', [AdminLoginController::class, 'showLoginForm'])->name('admin.login');
     Route::post('/login', [AdminLoginController::class, 'login'])->name('admin.login.submit');
-    Route::get('logout/', [AdminLoginController::class, 'logout'])->name('admin.logout');
+    Route::get('logout', [AdminLoginController::class, 'logout'])->name('admin.logout');
     Route::get('/', [DashboardController::class, 'index'])->name('admin.dashboard');
-
-//    Route::get('/page', [DashboardController::class, 'page'])->name('page');
-//    Route::post('/page/store', [DashboardController::class, 'pageStore'])->name('page.store');
-
-
-
 
     Route::group(['prefix' => 'users'], function () {
         Route::get('/', [UserController::class, 'index'])->name('user.index');
         Route::get('/create', [UserController::class, 'create'])->name('user.create');
         Route::post('/store', [UserController::class, 'store'])->name('user.store');
+        Route::get('/view/{id}', [UserController::class, 'view'])->name('user.view');
 
     });
 

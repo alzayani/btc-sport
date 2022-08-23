@@ -1,6 +1,10 @@
 @extends('backend.layouts.master')
 
+@section('css')
+{{--    <!-- INTERNAL Toster css -->--}}
+{{--    <link rel="stylesheet" href="{{ asset('assets/plugins/jquery-toast-plugin/dist/jquery.toast.min.css')}}">--}}
 
+@endsection
 
 @section('content')
     <div class="main-content">
@@ -36,7 +40,7 @@
                     <div class="card">
                         <div class="card-header justify-content-between">
                             <h3>Normal Users List</h3>
-                            <a class="btn btn-twitter pull-right"  href="#">Add</a>
+                            <a class="btn btn-twitter pull-right"  href="{{route('user.create')}}">Add</a>
                         </div>
                         <div class="card-body p-0 table-border-style">
                             <div class="table-responsive">
@@ -73,7 +77,7 @@
                                             @endif
                                             <td>
                                                 <div class="table-actions">
-                                                    <a href="#"><i class="ik ik-eye"></i></a>
+                                                    <a href="{{route('user.view',$user->id)}}"><i class="ik ik-eye"></i></a>
                                                     <a href="#"><i class="ik ik-edit-2"></i></a>
                                                     <a href="#"><i class="ik ik-trash-2"></i></a>
                                                 </div>
@@ -94,3 +98,24 @@
 
 
 @endsection
+
+@section('js')
+
+    <script>
+        $(document).ready(function () {
+            // $("#create_member").click(function () {
+            //     if ($("#create_member").is(":checked") == true) {
+            //         // alert('You can rock now...');
+            //         $("#member_dev").show();
+            //         $("#create_member").val("Yes");
+            //     } else {
+            //         // alert('You can rock now...');
+            //         $("#member_dev").hide();
+            //         $("#create_member").val("No");
+            //     }
+            // });
+
+
+
+        });
+    </script>

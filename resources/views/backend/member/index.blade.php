@@ -36,7 +36,7 @@
                     <div class="card">
                         <div class="card-header justify-content-between">
                             <h3>Members List</h3>
-                            <a class="btn btn-twitter pull-right"  href="#">Add</a>
+                            <a class="btn btn-twitter pull-right"  href="{{route('user.create')}}">Add</a>
                         </div>
                         <div class="card-body p-0 table-border-style">
                             <div class="table-responsive">

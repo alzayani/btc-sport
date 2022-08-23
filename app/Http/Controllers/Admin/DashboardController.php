@@ -22,13 +22,4 @@ class DashboardController extends Controller
         return view('admin');
     }
 
-    public function pageStore(Request $request)
-    {
-        return $request;
-    }
-
-    public function store(Request $request)
-    {
-        return $request;
-    }
 }
