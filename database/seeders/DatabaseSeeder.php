@@ -25,6 +25,7 @@ class DatabaseSeeder extends Seeder
             CountriesSeeder::class,
             AdminSeeder::class,
             UserSeeder::class,
+            DepartmentSeeder::class,
         ]);
     }
 }

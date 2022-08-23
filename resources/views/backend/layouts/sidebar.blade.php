@@ -38,6 +38,17 @@
 
                     </div>
                 </div>
+                <div class="nav-lavel">HR</div>
+                <div class="nav-item has-sub">
+                    <a href="javascript:void(0)"><i class="ik ik-users"></i><span>Human Resources</span></a>
+                    <div class="submenu-content">
+                        <a href="{{route('user.create')}}" class="menu-item">Add Employee</a>
+                        <a href="{{route('member.index')}}" class="menu-item">Employees</a>
+                        <a href="{{route('department.index')}}" class="menu-item">Department</a>
+                        <a href="#" class="menu-item">Finance</a>
+
+                    </div>
+                </div>
                 <div class="nav-lavel">UI Element</div>
                 <div class="nav-item has-sub">
                     <a href="#"><i class="ik ik-box"></i><span>Basic</span></a>
