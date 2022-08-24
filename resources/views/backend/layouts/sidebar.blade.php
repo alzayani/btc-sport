@@ -42,8 +42,8 @@
                 <div class="nav-item has-sub">
                     <a href="javascript:void(0)"><i class="ik ik-users"></i><span>Human Resources</span></a>
                     <div class="submenu-content">
-                        <a href="{{route('user.create')}}" class="menu-item">Add Employee</a>
-                        <a href="{{route('member.index')}}" class="menu-item">Employees</a>
+                        <a href="{{route('employee.create')}}" class="menu-item">Add Employee</a>
+                        <a href="{{route('employee.index')}}" class="menu-item">Employees</a>
                         <a href="{{route('department.index')}}" class="menu-item">Department</a>
                         <a href="#" class="menu-item">Finance</a>
 

@@ -20,24 +20,25 @@ class EmployeesController extends Controller
 
     public function index()
     {
-        $this->authorize('Manage Employees Menu', Employees::class);
-
         $employees = Employees::with('department')->get();
         $tot_emp = Employees::get()->count();
-         $tot_male = Employees::where('gender', 'Male')->get()->count();
+        $tot_male = Employees::where('gender', 'Male')->get()->count();
         $tot_female = Employees::where('gender', 'Female')->get()->count();
-         $tot_manager = Employees::groupBy('manager_id')->where('manager_id', '!=', '')->get()->count();
+//          $tot_manager = Employees::groupBy('manager_id')->where('manager_id', '!=', '')->get()->count();
         $tot_dep = Department::get()->count();
-        return view('pages.employees.index', compact('employees', 'tot_emp', 'tot_male', 'tot_female', 'tot_manager', 'tot_dep'));
+        return view('backend.employees.index', compact('employees', 'tot_emp', 'tot_male', 'tot_female', 'tot_dep'));
     }
 
     public function create()
     {
         $departments = Department::select('id', 'name')->get();
-        $supervisors = Employees::select('id', 'full_name')->get();
-        $groups = Role::select('id', 'name')->get();
+//        $supervisors = Employees::select('id', 'full_name')->get();
+//        $groups = Role::select('id', 'name')->get();
+//
+//        return view('pages.employees.new', compact('departments', 'supervisors', 'groups'));
+        return view('backend.employees.create', compact('departments',));
 
-        return view('pages.employees.new', compact('departments', 'supervisors', 'groups'));
+
     }
 
     public function store(EmployeeRequest $request)
@@ -182,7 +183,7 @@ class EmployeesController extends Controller
         $departments = Department::select('id', 'name')->get();
         $supervisors = Employees::select('id', 'full_name')->get();
         $groups = Role::select('id', 'name')->get();
-         $employee = Employees::with('user')->findOrFail($id);
+        $employee = Employees::with('user')->findOrFail($id);
         $allowances = $employee->allowances;
         // return $allowances;
         $attachments = $employee->attachments;
